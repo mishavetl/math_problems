@@ -1,0 +1,20 @@
+def add_grid(self):
+    self.grid.addWidget(self.label, 0, 0)
+    self.grid.addWidget(self.from_field, 0, 1)
+    self.grid.addWidget(self.label1, 1, 0)
+    self.grid.addWidget(self.to_field, 1, 1)
+    self.grid.addWidget(self.apply, 2, 1)
+    self.grid.addWidget(self.options_menu, 2, 0)
+
+    self.grid.addWidget(self.freespace, 0, 0)
+    self.grid.addWidget(self.start, 0, 1)
+    self.grid.addWidget(self.freespace1, 0, 2)
+    self.grid.addWidget(self.options, 1, 1)
+    self.grid.addWidget(self.quit, 2, 1)
+
+    self.grid.addWidget(self.show_answer, 0, 0)
+    self.grid.addWidget(self.answer_field, 0, 1)
+    self.grid.addWidget(self.problem_field, 1, 0)
+    self.grid.addWidget(self.user_answer_field, 1, 1)
+    self.grid.addWidget(self.submit, 2, 0)
+    self.grid.addWidget(self.start_menu, 2, 1)

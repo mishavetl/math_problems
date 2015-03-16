@@ -7,11 +7,10 @@ from genexpr import genExpr
 from switch_menus import *
 from add_grid import add_grid
 
-class Example(QtGui.QMainWindow):
+class Gui(QtGui.QMainWindow):
 
     def __init__(self):
-        super(Example, self).__init__()
-        # apply(QMainWindow.__init__, (self, ) + args
+        super(Gui, self).__init__()
 
         self.initUI()
 
@@ -42,8 +41,8 @@ class Example(QtGui.QMainWindow):
         self.grid = QtGui.QGridLayout(self.mainWidget)
         self.grid.setSpacing(40)
 
-
-        self.setFixedSize(300, 200)
+        # self.setFixedSize(300, 200)
+        self.setGeometry(300, 300, 200, 200)
         self.setWindowTitle('Math Problems')
         self.setWindowIcon(QtGui.QIcon('icon.svg'))
 
@@ -75,6 +74,12 @@ class Example(QtGui.QMainWindow):
 
         self.user_answer_field.returnPressed.connect(self.check)
 
+        self.user_answer_field.setMaximumWidth(200)
+        self.start_menu.setMaximumWidth(200)
+        self.submit.setMaximumWidth(200)
+        self.show_answer.setMaximumWidth(200)
+        self.answer_field.setMaximumWidth(200)
+        self.problem_field.setMaximumWidth(200)
 
 
         # Main menu Widgets
@@ -87,6 +92,10 @@ class Example(QtGui.QMainWindow):
 
         self.quit = QtGui.QPushButton('Quit', self)
         self.quit.clicked.connect(QtCore.QCoreApplication.instance().quit)
+
+        self.quit.setMaximumWidth(200)
+        self.options.setMaximumWidth(200)
+        self.start.setMaximumWidth(200)
 
 
         self.freespace = QtGui.QLabel(self)
@@ -107,6 +116,13 @@ class Example(QtGui.QMainWindow):
         self.from_field.setText(str(self.first))
         self.to_field = QtGui.QLineEdit(self)
         self.to_field.setText(str(self.second))
+
+        self.apply.setMaximumWidth(200)
+        self.from_field.setMaximumWidth(200)
+        self.to_field.setMaximumWidth(200)
+        self.options_menu.setMaximumWidth(200)
+        self.label.setMaximumWidth(200)
+        self.label1.setMaximumWidth(200)
 
         add_grid(self)
 
@@ -175,7 +191,7 @@ class Example(QtGui.QMainWindow):
 def main():
 
     app = QtGui.QApplication(sys.argv)
-    ex = Example()
+    gui = Gui()
     sys.exit(app.exec_())
 
 
